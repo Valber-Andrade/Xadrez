@@ -5,6 +5,8 @@ int main() {
     int bispo = 1; 
     int torre = 1;
     int rainha = 1;
+    int cavalo = 0;
+    int movimentoEmL = 1; //Variavel para a movimentação em 'L'
 
     //Usando while para movimentar o Bispo
     printf("O Bispo está se movendo na direção: \n"); //Printf para ilustrar a movimentação do Bispo
@@ -35,9 +37,17 @@ int main() {
         printf("Esquerda.\n");//imprime as direções que ela vai andar
     }
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    printf("\nO Cavalo está se movendo:\n");
+
+    while (movimentoEmL--) //O -- para imprimir o movimento para a "Esquerda" apenas uma vez
+    {
+        for (cavalo = 0; cavalo < 2; cavalo++)
+        {
+            printf("Baixo\n"); //vai imprimir "Baixo" duas vezes
+        }
+        printf("Esquerda\n"); //vai imprimir "esquerda" uma vez
+    }
+    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
