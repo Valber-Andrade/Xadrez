@@ -1,9 +1,16 @@
 #include <stdio.h> //Incluindo a biblioteca
 
+void moverTorre(int casas) {
+    if (casas > 0)
+    {
+        printf("Direita\n");
+        moverTorre(casas -1);
+    }
+}
+
 int main() {
     //Adicionando as variaveis de incremento
     int bispo = 1; 
-    int torre = 1;
     int rainha = 1;
     int cavalo = 0;
     int movimentoEmL = 1; //Variavel para a movimentação em 'L'
@@ -22,12 +29,7 @@ int main() {
     //Usando do-while para movimentar a Torre
     printf("\nA Torre está se movendo na direção: \n"); //Printf para ilustrar a movimentação da Torre
 
-    do //Ira fazer o printf, enquanto o valor de torre for menor que 5
-    {
-        printf("Direita.\n");//imprime as direções que ela vai andar
-        torre++; //torre mais mais, para incremento nas casas
-
-    } while (torre <= 5);
+    moverTorre(5);
 
     //Usando for para movimentar a Rainha
     printf("\nA Rainha está se movendo na direção: \n"); //Printf para ilustrar a movimentação da Rainha
@@ -49,12 +51,7 @@ int main() {
     }
     
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    
 
     return 0;
 }
