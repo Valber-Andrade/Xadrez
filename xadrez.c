@@ -1,10 +1,26 @@
 #include <stdio.h> //Incluindo a biblioteca
 
 void moverBispo(int casas) {
+    
+    
+
     if (casas > 0)
     {
         moverBispo(casas -1);
-        printf("Bispo, %d casa para Direita, Cima\n", casas);        
+        int movimentoBispo = 1, bispo;
+        while (movimentoBispo--)
+        {
+            printf("Bispo está movendo para Cima. \n");
+            for (bispo = 1; bispo <= 2 ; bispo++)
+        {
+            printf("Bispo está movendo para Direita \n");
+            break;
+        }
+        
+        }
+        
+        
+          
     }
 }
 
