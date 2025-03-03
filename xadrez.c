@@ -1,57 +1,57 @@
 #include <stdio.h> //Incluindo a biblioteca
 
-void moverTorre(int casas) {
+void moverBispo(int casas) {
     if (casas > 0)
     {
-        printf("Direita\n");
-        moverTorre(casas -1);
+        moverBispo(casas -1);
+        printf("Bispo, %d casa para Direita, Cima\n", casas);        
     }
 }
 
+void moverTorre(int casas) {
+    if (casas > 0)
+    {
+        moverTorre(casas -1);
+        printf("torre, %d casa para Direita\n", casas);        
+    }
+}
+
+void moverRainha(int casas) {
+    if (casas > 0)
+    {
+        moverRainha(casas -1);
+        printf("Rainha, %d casa para Esquerda\n", casas); 
+
+    }
+}
 int main() {
     //Adicionando as variaveis de incremento
-    int bispo = 1; 
-    int rainha = 1;
-    int cavalo = 0;
+    int cavalo, i;
     int movimentoEmL = 1; //Variavel para a movimentação em 'L'
 
-    //Usando while para movimentar o Bispo
     printf("O Bispo está se movendo na direção: \n"); //Printf para ilustrar a movimentação do Bispo
-
-    while (bispo <= 5)//enquanto o bispo for menor que 5
-    {
-        printf("Cima, Direita.\n");//imprime as direções que ele vai andar
-        bispo++; //bispo mais mais, para incremento nas casas
+    moverBispo(5);
     
-    }
-
-    
-    //Usando do-while para movimentar a Torre
     printf("\nA Torre está se movendo na direção: \n"); //Printf para ilustrar a movimentação da Torre
 
     moverTorre(5);
 
-    //Usando for para movimentar a Rainha
     printf("\nA Rainha está se movendo na direção: \n"); //Printf para ilustrar a movimentação da Rainha
 
-    for (rainha = 1; rainha <= 8; rainha++)//rainha igual a 0, enquanto a rainha andar menos que 8 casas, rainha++
-    {
-        printf("Esquerda.\n");//imprime as direções que ela vai andar
-    }
+    moverRainha(8);
 
     printf("\nO Cavalo está se movendo:\n");
 
     while (movimentoEmL--) //O -- para imprimir o movimento para a "Esquerda" apenas uma vez
     {
-        for (cavalo = 0; cavalo < 2; cavalo++)
+        for (cavalo = 1, i = 1 ; cavalo <= 2 && i <= 2 ; cavalo++, i)
         {
-            printf("Baixo\n"); //vai imprimir "Baixo" duas vezes
+            printf("Cavalo, %d casa para Cima.\n", cavalo);
         }
-        printf("Esquerda\n"); //vai imprimir "esquerda" uma vez
+            printf("Cavalo, %d casa para a direita.\n", i);
+        
+        
     }
-    
-
-    
 
     return 0;
 }
